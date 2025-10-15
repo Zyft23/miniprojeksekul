@@ -7,8 +7,10 @@ gopay_list = []
 gopay_nominals = []
 shopee_list = []
 shopee_nominals = []
-list_akesoris = []
-
+nama_akesoris = []
+jumlah_aksesoris = []
+harga_aksesoris = []
+total_aksesoris = []
 
 
 while True:
@@ -95,13 +97,33 @@ while True:
                     print("3.Batal")
                     opsikabel = int(input("Pilih Tipe Kabel 1-2"))
                     if opsikabel == 1:
-                        typeC = int(input("beli berapa banyak"))
+                        namatype = "Type C"
                         hargaC = 10000
-                        totalhargakabel += typeC * hargaC
+                        while True:
+                            typeC = int(input("beli berapa banyak"))
+                            if typeC.isdigit():
+                                totalhargakabel += typeC * hargaC
+                                nama_akesoris.append(namatype)
+                                harga_aksesoris.append(hargaC)
+                                jumlah_aksesoris.append(typeC)
+                                total_aksesoris.append(typeC * hargaC)
+                                break
+                            else:
+                                print("hanya menggunakan angka")
                     elif opsikabel == 2:
-                        micro = int(input("beli berapa banyak"))
+                        namatype = "Type Micro Usb"
                         hargamicro = 7500
-                        totalhargakabel += micro * hargamicro
+                        while True:
+                            micro = input("beli berapa banyak")
+                            if micro.isdigit():
+                                totalhargakabel += micro * hargamicro
+                                nama_akesoris.append(namatype)
+                                harga_aksesoris.append(hargamicro)
+                                jumlah_aksesoris.append(micro)
+                                total_aksesoris.append(micro * hargamicro)
+                                break
+                            else:
+                                print("hanya menggunakan angka")
                     elif opsikabel == 3:
                         break
                     else:
