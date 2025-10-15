@@ -1,4 +1,6 @@
 total_pulsa = 0
+total_Ewallet = 0
+total_aksesoris = 0
 list_hp = []
 list_nominalhp = []
 dana_list = []
@@ -21,16 +23,24 @@ while True:
     print("4.Selesai")
     pilihan = int(input("Pilih Dari angka 1-4"))
     if pilihan == 1:
-        print("===Pulsa===")
-        no_hp = int(input("masukan nomor hp(12 digit): "))
-        if no_hp.isdigit() and len(no_hp) ==12:
-            nominal_pulsa = int(input("masukan nominal: "))
-            list_hp.append(no_hp)
-            list_nominalhp.append(nominal_pulsa)
-            total_pulsa += nominal_pulsa
-            break
-        else:
-            print("nomor tidak valid")
+        while True:
+            print("===Pulsa===")
+            print("ketik batal untuk membatalkan")
+            no_hp = input("masukan nomor hp(12 digit): ").lower()
+            if no_hp == "batal":
+                break
+            elif no_hp.isdigit() and len(no_hp) ==12:
+                nominal_pulsa = input("masukan nominal: ")
+                if nominal_pulsa.isdigit():
+                    list_hp.append(no_hp)
+                    nominal_pulsa = int(nominal_pulsa)
+                    list_nominalhp.append(nominal_pulsa)
+                    total_pulsa += nominal_pulsa
+                    break
+                else:
+                    print("nominal harus berupa angka")
+            else:
+                print("nomor tidak valid")
     elif pilihan == 2:
         while True:
             print("====E-Wallet====")
@@ -43,13 +53,21 @@ while True:
                 namawalletdana = "Dama"
                 while True:
                     print("===Dana===")
-                    dana = input("masukkan Nomor Dana(12digit)")
-                    if dana.isdigit() and len(dana) == 12:
-                        nominalWalletdana = int(input("masukkan Nominal"))
-                        total_Ewallet += nominalWalletdana
-                        dana_list.append(dana)
-                        dana_nominals.append(nominalWalletdana)
+                    print("ketik batal untuk membatalkan")
+                    dana = input("masukkan Nomor Dana(12digit)").lower()
+                    if dana == "batal":
                         break
+                    elif dana.isdigit() and len(dana) == 12:
+                        while True:
+                            nominalWalletdana = input("masukkan Nominal")
+                            if nominalWalletdana.isdigit():
+                                nominalWalletdana = int(nominalWalletdana)
+                                total_Ewallet += nominalWalletdana
+                                dana_list.append(dana)
+                                dana_nominals.append(nominalWalletdana)
+                                break
+                            else:
+                                print("nominal tidak valid")
                     else:
                         print("nomor tidak valid")
             elif pilihan2 == 2:
@@ -183,12 +201,10 @@ while True:
             else:
                 print("tidak ada pilihan")
     elif pilihan == 4:
-
         total_aksesoris = totalhargacase + totalhargakabel + hargatotalear
         total = total_aksesoris + total_Ewallet + total_pulsa
-
         print("=" * 10)
-        print("STRUK PEMBELIAN      ")
+        print("Zhamet cell")
         print("=" * 10)
         for j in range (len(list_hp)):
             print("Pulsa", j+1, " No : ", list_hp[j], "nominal :", list_nominalhp[j])
