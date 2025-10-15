@@ -1,16 +1,4 @@
 total_pulsa = 0
-total_Ewallet = 0
-total_aksesoris = 0
-totalhargacase = 0
-totalhargakabel = 0
-hargatotalear = 0
-namawalletdana = ''
-namawalletgopay = ''
-namawalletshopee = ''
-nominalWalletdana = 0
-nominalWalletgopay = 0
-nominalWalletshopee = 0
-
 list_hp = []
 list_nominalhp = []
 dana_list = []
@@ -19,6 +7,8 @@ gopay_list = []
 gopay_nominals = []
 shopee_list = []
 shopee_nominals = []
+list_akesoris = []
+
 
 
 while True:
@@ -32,13 +22,13 @@ while True:
         print("===Pulsa===")
         no_hp = int(input("masukan nomor hp(12 digit): "))
         if no_hp.isdigit() and len(no_hp) ==12:
+            nominal_pulsa = int(input("masukan nominal: "))
+            list_hp.append(no_hp)
+            list_nominalhp.append(nominal_pulsa)
+            total_pulsa += nominal_pulsa
             break
         else:
             print("nomor tidak valid")
-        nominal_pulsa = int(input("masukan nominal: "))
-        total_pulsa += nominal_pulsa
-        list_hp.append(no_hp)
-        list_nominalhp.append(nominal_pulsa)
     elif pilihan == 2:
         while True:
             print("====E-Wallet====")
@@ -75,15 +65,17 @@ while True:
                 gopay_nominals.append(nominalWalletgopay)
             elif pilihan2 == 3:
                 namawalletshopee = "shopeepay"
-                print("===ShopeePay===")
-                shopeepay = int(input("masukkan Nomor ShopeePay"))
-                if shopeepay.isdigit() and len(shopeepay) == 12:
-                    break
-                else:
-                    print("nomor tidak valid")
-                nominalWalletshopee = int(input("masukkan Nominal"))
-                total_Ewallet += nominalWalletshopee
-                shopee_list
+                while True:
+                    print("===ShopeePay===")
+                    shopeepay = int(input("masukkan Nomor ShopeePay"))
+                    if shopeepay.isdigit() and len(shopeepay) == 12:
+                        nominalWalletshopee = int(input("masukkan Nominal"))
+                        total_Ewallet += nominalWalletshopee
+                        shopee_list.append(shopeepay)
+                        shopee_nominals.append(shopee_nominals)
+                        break
+                    else:
+                        print("nomor tidak valid")
             elif pilihan2 == 4:
                 break
             else:
@@ -176,11 +168,12 @@ while True:
         print("=" * 10)
         print("STRUK PEMBELIAN      ")
         print("=" * 10)
-        print("Pulsa         : ", total_pulsa)
+        for j in range (len(list_hp)):
+            print("Pulsa", j+1, " No : ", list_hp[j], "nominal :", list_nominalhp[j])
         print("-" * 10)
         print("E-Wallet:")
         for i in range(len(dana_list)):
-            print("Dana", i+1,": ", dana_list[i], "nominal :", dana_nominals[i] )
+            print("Dana", i+1," No : ", dana_list[i], "nominal :", dana_nominals[i] )
         print("  GoPay     : ", nominalWalletgopay)
         print("  ShopeePay : ", nominalWalletshopee)
         print("-" * 10)
