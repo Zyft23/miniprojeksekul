@@ -1,6 +1,14 @@
+import datetime
+import time
 total_pulsa = 0
 total_Ewallet = 0
 total_aksesoris = 0
+totalhargacase = 0
+totalhargakabel = 0
+hargatotalear = 0
+nominalWalletdana = 0
+nominalWalletgopay = 0
+nominalWalletshopee = 0
 list_hp = []
 list_nominalhp = []
 dana_list = []
@@ -13,6 +21,7 @@ nama_akesoris = []
 jumlah_aksesoris = []
 harga_aksesoris = []
 total_aksesoris = []
+now = datetime.datetime.now()
 
 
 while True:
@@ -68,6 +77,7 @@ while True:
                                 break
                             else:
                                 print("nominal tidak valid")
+                        break
                     else:
                         print("nomor tidak valid")
             elif pilihan2 == 2:
@@ -178,21 +188,21 @@ while True:
                     print("2.realme")
                     print("3.iphone")
                     print("4.batal")
-                    opsicase = int(input("Pilih merek"))
+                    opsicase = int(input("Pilih merek : "))
                     if opsicase == 1:
                         namacase = "Xiaomi"
-                        xcase = int(input("berapa banyak yg dibeli"))
+                        xcase = int(input("berapa banyak yg dibeli : "))
                         hargacasex = 5000
                         totalhargacase += xcase * hargacasex
                     elif opsicase == 2:
                         namacase = "Realme"
                         hargacaser = 4500
-                        rcase = int(input("berapa banyak yg dibeli"))
+                        rcase = int(input("berapa banyak yg dibeli : "))
                         totalhargacase += rcase * hargacaser
                     elif opsicase == 3:
                         namacase = "Iphone"
                         hargacasei = 5500
-                        icase = int(input("berapa banyak yg dibeli"))
+                        icase = int(input("berapa banyak yg dibeli : "))
                         totalhargacase += icase * hargacasei
                     elif opsicase == 4:
                         break
@@ -221,6 +231,7 @@ while True:
         print("  Casing HP  : ", totalhargacase)
         print("-" * 10)
         print("TOTAL        : ", total)
+        print(now)
         print("=" * 10)
         print("ありがとうございました")
         break
