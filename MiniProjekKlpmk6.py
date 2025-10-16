@@ -1,27 +1,16 @@
-import datetime
-import time
 total_pulsa = 0
 total_Ewallet = 0
-total_aksesoris = 0
-totalhargacase = 0
-totalhargakabel = 0
-hargatotalear = 0
-nominalWalletdana = 0
-nominalWalletgopay = 0
-nominalWalletshopee = 0
+hargaakesoris = 0
+nominal = 0
 list_hp = []
 list_nominalhp = []
-dana_list = []
-dana_nominals = []
-gopay_list = []
-gopay_nominals = []
-shopee_list = []
-shopee_nominals = []
+listnowallet = []
+listwallertnominal = []
+listnamawallet = []
 nama_akesoris = []
-jumlah_aksesoris = []
 harga_aksesoris = []
-total_aksesoris = []
-now = datetime.datetime.now()
+nama_aksesoris = []
+jumlah_aksesoris = []
 
 
 while True:
@@ -34,17 +23,18 @@ while True:
     if pilihan == 1:
         while True:
             print("===Pulsa===")
+            print("Masukkan nomor hp (12Digit)")
             print("ketik batal untuk membatalkan")
-            no_hp = input("masukan nomor hp(12 digit): ").lower()
+            no_hp = input(" : ").lower()
             if no_hp == "batal":
                 break
             elif no_hp.isdigit() and len(no_hp) ==12:
-                nominal_pulsa = input("masukan nominal: ")
-                if nominal_pulsa.isdigit():
+                nominal = input("masukan nominal: ")
+                if nominal.isdigit():
                     list_hp.append(no_hp)
-                    nominal_pulsa = int(nominal_pulsa)
-                    list_nominalhp.append(nominal_pulsa)
-                    total_pulsa += nominal_pulsa
+                    nominal = int(nominal)
+                    list_nominalhp.append(nominal)
+                    total_pulsa += nominal
                     break
                 else:
                     print("nominal harus berupa angka")
@@ -59,7 +49,7 @@ while True:
             print("4.batal")
             pilihan2 = int(input("Pilih Dari 1-4"))
             if pilihan2 == 1:
-                namawalletdana = "Dama"
+                namawallet = "Dama"
                 while True:
                     print("===Dana===")
                     print("ketik batal untuk membatalkan")
@@ -68,12 +58,13 @@ while True:
                         break
                     elif dana.isdigit() and len(dana) == 12:
                         while True:
-                            nominalWalletdana = input("masukkan Nominal")
-                            if nominalWalletdana.isdigit():
-                                nominalWalletdana = int(nominalWalletdana)
-                                total_Ewallet += nominalWalletdana
-                                dana_list.append(dana)
-                                dana_nominals.append(nominalWalletdana)
+                            nominal = input("masukkan Nominal")
+                            if nominal.isdigit():
+                                nominal = int(nominal)
+                                total_Ewallet += nominal
+                                listnowallet.append(dana)
+                                listwallertnominal.append(nominal)
+                                listnamawallet.append(namawallet)
                                 break
                             else:
                                 print("nominal tidak valid")
@@ -81,28 +72,34 @@ while True:
                     else:
                         print("nomor tidak valid")
             elif pilihan2 == 2:
-                namawalletgopay = "Gopay"
+                namawallet = "Gopay"
                 while True:
                     print("===GoPay===")
-                    gopay = int(input("masukkan Nomor Gopay"))
+                    gopay = input("masukkan Nomor Gopay")
                     if gopay.isdigit() and len(gopay) == 12:
-                        break
+                        nominal = input("masukkan Nominal")
+                        if nominal.isdigit():
+                            nominal = int(nominal)
+                            total_Ewallet += nominal
+                            listnowallet.append(gopay)
+                            listwallertnominal.append(nominal)
+                            listnamawallet.append(namawallet)
+                            break
+                        else:
+                            print("hanya berupa angka")
                     else:
                         print("nomor tidak valid")
-                nominalWalletgopay = int(input("masukkan Nominal"))
-                total_Ewallet += nominalWalletgopay
-                gopay_list.append(gopay)
-                gopay_nominals.append(nominalWalletgopay)
             elif pilihan2 == 3:
-                namawalletshopee = "shopeepay"
+                namawallet = "shopeepay"
                 while True:
                     print("===ShopeePay===")
                     shopeepay = int(input("masukkan Nomor ShopeePay"))
                     if shopeepay.isdigit() and len(shopeepay) == 12:
-                        nominalWalletshopee = int(input("masukkan Nominal"))
-                        total_Ewallet += nominalWalletshopee
-                        shopee_list.append(shopeepay)
-                        shopee_nominals.append(shopee_nominals)
+                        nominal = int(input("masukkan Nominal"))
+                        total_Ewallet += nominal
+                        listnowallet.append(shopeepay)
+                        listwallertnominal.append(nominal)
+                        listnamawallet.append(namawallet)
                         break
                     else:
                         print("nomor tidak valid")
@@ -125,30 +122,29 @@ while True:
                     print("3.Batal")
                     opsikabel = int(input("Pilih Tipe Kabel 1-2"))
                     if opsikabel == 1:
-                        namatype = "Type C"
+                        namaakse = "Type C"
                         hargaC = 10000
                         while True:
-                            typeC = int(input("beli berapa banyak"))
+                            typeC = input("beli berapa banyak")
                             if typeC.isdigit():
-                                totalhargakabel += typeC * hargaC
-                                nama_akesoris.append(namatype)
-                                harga_aksesoris.append(hargaC)
+                                typeC = int(typeC)
+                                hargaakesoris += typeC * hargaC
+                                nama_aksesoris.append(namaakse)
+                                harga_aksesoris.append(typeC * hargaC)
                                 jumlah_aksesoris.append(typeC)
-                                total_aksesoris.append(typeC * hargaC)
                                 break
                             else:
                                 print("hanya menggunakan angka")
                     elif opsikabel == 2:
-                        namatype = "Type Micro Usb"
+                        namaakse = "Type Micro Usb"
                         hargamicro = 7500
                         while True:
                             micro = input("beli berapa banyak")
                             if micro.isdigit():
                                 totalhargakabel += micro * hargamicro
-                                nama_akesoris.append(namatype)
-                                harga_aksesoris.append(hargamicro)
+                                nama_aksesoris.append(namaakse)
+                                harga_aksesoris.append(micro * hargamicro)
                                 jumlah_aksesoris.append(micro)
-                                total_aksesoris.append(micro * hargamicro)
                                 break
                             else:
                                 print("hanya menggunakan angka")
@@ -162,24 +158,29 @@ while True:
                     print("2.Mid budget")
                     print("3.High Budget")
                     print("4.Batal")
-                    opsiEar = int(input("Pilih dari 1-4: "))
-                    if opsiEar == 1:
-                        namaearlow = "Low Budger Earphone"
-                        hargaear = 10000
-                        lowear = int(input("beli berapa banyak"))
-                        hargatotalear += lowear * hargaear
-                    elif opsiEar == 2:
-                        namaearmid = "Mid budget Earphone"
-                        hargaear = 25000
-                        midear = int(input("beli berapa banyak"))
-                        hargatotalear += midear * hargaear
-                    elif opsiEar == 3:
-                        namaearhigh = "High budget Earphone"
-                        hargaear = 50000
-                        highear = int(input("beli berapa banyak"))
-                        hargatotalear += highear * hargaear
-                    elif opsiEar == 4:
-                        break
+                    opsiEar = input("Pilih dari 1-4: ")
+                    if opsiEar.isdigit():
+                        if opsiEar == 1:
+                            namaakse = "Low Budger Earphone"
+                            hargaear = 10000
+                            lowear = input("beli berapa banyak")
+                            if lowear.isdigit():
+                                lowear = int(lowear)
+                                hargatotalear += lowear * hargaear
+                            else:
+                                print("harus berupa angka")
+                        elif opsiEar == 2:
+                            namaakse = "Mid budget Earphone"
+                            hargaear = 25000
+                            midear = int(input("beli berapa banyak"))
+                            hargatotalear += midear * hargaear
+                        elif opsiEar == 3:
+                            namaakse = "High budget Earphone"
+                            hargaear = 50000
+                            highear = int(input("beli berapa banyak"))
+                            hargatotalear += highear * hargaear
+                        elif opsiEar == 4:
+                            break
                     else:
                         print("tidak ada pilihan")
             elif pilihan3 == 3:
@@ -190,20 +191,20 @@ while True:
                     print("4.batal")
                     opsicase = int(input("Pilih merek : "))
                     if opsicase == 1:
-                        namacase = "Xiaomi"
+                        namaakse = "Xiaomi"
                         xcase = int(input("berapa banyak yg dibeli : "))
                         hargacasex = 5000
-                        totalhargacase += xcase * hargacasex
+                        hargaakesoris += xcase * hargacasex
                     elif opsicase == 2:
-                        namacase = "Realme"
+                        namaakse = "Realme"
                         hargacaser = 4500
                         rcase = int(input("berapa banyak yg dibeli : "))
-                        totalhargacase += rcase * hargacaser
+                        hargaakesoris += rcase * hargacaser
                     elif opsicase == 3:
-                        namacase = "Iphone"
+                        namaakse = "Iphone"
                         hargacasei = 5500
                         icase = int(input("berapa banyak yg dibeli : "))
-                        totalhargacase += icase * hargacasei
+                        hargaakesoris += icase * hargacasei
                     elif opsicase == 4:
                         break
             elif pilihan3 == 4:
@@ -211,29 +212,24 @@ while True:
             else:
                 print("tidak ada pilihan")
     elif pilihan == 4:
-        total_aksesoris = totalhargacase + totalhargakabel + hargatotalear
-        total = total_aksesoris + total_Ewallet + total_pulsa
+        total = hargaakesoris + total_Ewallet + total_pulsa
         print("=" * 10)
         print("Zhamet cell")
         print("=" * 10)
-        for j in range (len(list_hp)):
-            print("Pulsa", j+1, " No : ", list_hp[j], "nominal :", list_nominalhp[j])
+        for p in range (len(list_hp)):
+            print("Pulsa", p+1, " No : ", list_hp[p], "nominal :", list_nominalhp[p])
+            break
         print("-" * 10)
         print("E-Wallet:")
-        for i in range(len(dana_list)):
-            print("Dana", i+1," No : ", dana_list[i], "nominal :", dana_nominals[i] )
-        print("  GoPay     : ", nominalWalletgopay)
-        print("  ShopeePay : ", nominalWalletshopee)
+        for e in range(len(listnowallet)):
+            print(e+1 , listnamawallet[e] ," No : ", listnowallet[e], "nominal :", listwallertnominal[e])
         print("-" * 10)
-        print("Aksesoris:")
-        print("  Kabel Data : ", totalhargakabel)
-        print("  Earphone   : ", hargatotalear)
-        print("  Casing HP  : ", totalhargacase)
+        print("akesoris")
+        for a in range (len(nama_aksesoris)):
+            print(a+1, nama_aksesoris[a], jumlah_aksesoris[a], harga_aksesoris[a])
         print("-" * 10)
-        print("TOTAL        : ", total)
-        print(now)
-        print("=" * 10)
-        print("ありがとうございました")
+        print(total)
+        print("-" * 10)
         break
     else:
         print("tidak ada inpit")
