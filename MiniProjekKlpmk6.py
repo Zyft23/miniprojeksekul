@@ -3,6 +3,7 @@ total_Ewallet = 0
 hargaakesoris = 0
 nominal = 0
 tipeXiaomi = ["poco", "mi", "redmi"]
+tipeRealme = ["realme","c","narzo","gt","note"]
 itp = []
 list_hp = []
 list_nominalhp = []
