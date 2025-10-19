@@ -2,6 +2,8 @@ total_pulsa = 0
 total_Ewallet = 0
 hargaakesoris = 0
 nominal = 0
+tipeXiaomi = ["poco", "mi", "redmi"]
+itp = []
 list_hp = []
 list_nominalhp = []
 listnowallet = []
@@ -202,10 +204,19 @@ while True:
                     print("4.batal")
                     opsicase = int(input("Pilih merek : "))
                     if opsicase == 1:
-                        namaakse = "Xiaomi"
-                        xcase = int(input("berapa banyak yg dibeli : "))
-                        hargacasex = 5000
-                        hargaakesoris += xcase * hargacasex
+                        while True:
+                            tipe = input("Masukkan tipe hp xiaomi poco/mi/redmi : ").lower()
+                            for tp in tipeXiaomi:
+                                if tp in tipe:
+                                    namaakse = "Xiaomi"
+                                    xcase = int(input("berapa banyak yg dibeli : "))
+                                    hargacasex = 5000
+                                    hargaakesoris += xcase * hargacasex
+                                    break
+                            else:
+                                print("masukkan tipe hp yg benar")
+                                continue
+                            break
                     elif opsicase == 2:
                         namaakse = "Realme"
                         hargacaser = 4500
@@ -241,6 +252,7 @@ while True:
         print("-" * 10)
         print(total)
         print("-" * 10)
+        print("ありがとうございました")
         break
     else:
         print("tidak ada inpit")
