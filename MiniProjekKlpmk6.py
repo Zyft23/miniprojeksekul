@@ -65,11 +65,14 @@ while True:
                                     nominal = input("masukkan Nominal")
                                     if nominal.isdigit():
                                         nominal = int(nominal)
-                                        total_Ewallet += nominal
-                                        listnowallet.append(dana)
-                                        listwallertnominal.append(nominal)
-                                        listnamawallet.append(namawallet)
-                                        break
+                                        if nominal > 0:
+                                            total_Ewallet += nominal
+                                            listnowallet.append(dana)
+                                            listwallertnominal.append(nominal)
+                                            listnamawallet.append(namawallet)
+                                            break
+                                        else:
+                                            print("nominal harus berupa angka")
                                     else:
                                         print("nominal tidak valid")
                                 break
@@ -84,11 +87,14 @@ while True:
                                 nominal = input("masukkan Nominal")
                                 if nominal.isdigit():
                                     nominal = int(nominal)
-                                    total_Ewallet += nominal
-                                    listnowallet.append(gopay)
-                                    listwallertnominal.append(nominal)
-                                    listnamawallet.append(namawallet)
-                                    break
+                                    if nominal > 0:
+                                        total_Ewallet += nominal
+                                        listnowallet.append(gopay)
+                                        listwallertnominal.append(nominal)
+                                        listnamawallet.append(namawallet)
+                                        break
+                                    else:
+                                        print("nominal harus berupa angka")
                                 else:
                                     print("hanya berupa angka")
                             else:
@@ -104,11 +110,14 @@ while True:
                                 nominal = input("masukkan Nominal")
                                 if nominal.isdigit():
                                     nominal = int(nominal)
-                                    total_Ewallet += nominal
-                                    listnowallet.append(shopeepay)
-                                    listwallertnominal.append(nominal)
-                                    listnamawallet.append(namawallet)
-                                    break
+                                    if nominal > 0:
+                                        total_Ewallet += nominal
+                                        listnowallet.append(shopeepay)
+                                        listwallertnominal.append(nominal)
+                                        listnamawallet.append(namawallet)
+                                        break
+                                    else:
+                                        print("nominal harus berupa angka")
                                 else:
                                     print("harus berupa angka")
                             else:
@@ -126,7 +135,7 @@ while True:
                 print("2.Earphone")
                 print("3.Casing Hp")
                 print("4.batal")
-                pilihan = ("Pilih Aksesoris Dari 1-4")
+                pilihan = input("Pilih Aksesoris Dari 1-4")
                 if pilihan.isdigit():
                     pilihan = int(pilihan)
                     if pilihan == 1:
