@@ -206,28 +206,40 @@ while True:
                     opsicase = int(input("Pilih merek : "))
                     if opsicase == 1:
                         while True:
-                            tipe = input("Masukkan tipe hp xiaomi poco/mi/redmi : ").lower()
-                            for tp in tipeXiaomi:
-                                if tp in tipe:
-                                    namaakse = "Xiaomi"
-                                    xcase = int(input("berapa banyak yg dibeli : "))
-                                    hargacasex = 5000
-                                    hargaakesoris += xcase * hargacasex
-                                    break
+                            namaakse = "Casexiaomi"
+                            harga = 5000
+                            jumlah = input("berapa banyak yg dibeli : ")
+                            if jumlah.isdigit():
+                                jumlah = int(jumlah)
+                                hargaakesoris += jumlah * harga
+                                nama_aksesoris.append(namaakse)
+                                jumlah_aksesoris.append(jumlah)
+                                Tharga_aksesoris.append(jumlah * harga)
+                                break
                             else:
-                                print("masukkan tipe hp yg benar")
-                                continue
-                            break
+                                print("jumlah harus angka")
                     elif opsicase == 2:
-                        namaakse = "Realme"
-                        hargacaser = 4500
-                        rcase = int(input("berapa banyak yg dibeli : "))
-                        hargaakesoris += rcase * hargacaser
+                        namaakse = "CaseRealme"
+                        harga = 4500
+                        jumlah = input("berapa banyak yg dibeli : ")
+                        if jumlah.isdigit():
+                            jumlah = int(jumlah)
+                            nama_aksesoris.append(namaakse)
+                            jumlah_aksesoris.append(jumlah)
+                            Tharga_aksesoris.append(jumlah * harga)
+                            hargaakesoris += jumlah * harga
+                        else:
+                            print("jumlah harus berupa angka")
                     elif opsicase == 3:
-                        namaakse = "Iphone"
-                        hargacasei = 5500
-                        icase = int(input("berapa banyak yg dibeli : "))
-                        hargaakesoris += icase * hargacasei
+                        namaakse = "Case Iphone"
+                        harga = 5500
+                        jumlah = input("berapa banyak yg dibeli : ")
+                        if jumlah.isdigit():
+                            jumlah = int(jumlah)
+                            nama_aksesoris.append(namaakse)
+                            jumlah_aksesoris.append(jumlah)
+                            Tharga_aksesoris.append(jumlah * harga)
+                            hargaakesoris += jumlah * harga
                     elif opsicase == 4:
                         break
             elif pilihan3 == 4:
@@ -248,10 +260,11 @@ while True:
         print("-" * 10)
         print("Akesoris")
         print("-" * 10)
+        
         for a in range (len(nama_aksesoris)):
             print(a+1, nama_aksesoris[a], "|", jumlah_aksesoris[a], "|" , "Rp",Tharga_aksesoris[a])
         print("-" * 10)
-        print(total)
+        print("total : "total)
         print("-" * 10)
         print("ありがとうございました")
         break
