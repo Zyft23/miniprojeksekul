@@ -180,52 +180,62 @@ while True:
                         print("2.Mid budget")
                         print("3.High Budget")
                         print("4.Batal")
-                        opsiEar = int(input("Pilih dari 1-4:"))
-                        if opsiEar == 1:
-                            namaakse = "Low Budger Earphone"
-                            harga = 10000
-                            jumlah = input("beli berapa banyak")
-                            if jumlah.isdigit():
-                                jumlah = int(jumlah)
-                                hargaakesoris += jumlah * harga
-                                nama_aksesoris.append(namaakse)
-                                jumlah_aksesoris.append(jumlah)
-                                Tharga_aksesoris.append(jumlah * harga)
+                        pilihanr = input("Pilih dari 1-4:")
+                        if pilihan.isdigit():
+                            pilihan = int(pilihan)
+                            if pilihan == 1:
+                                namaakse = "Low Budger Earphone"
+                                harga = 10000
+                                jumlah = input("beli berapa banyak")
+                                if jumlah.isdigit():
+                                    jumlah = int(jumlah)
+                                    hargaakesoris += jumlah * harga
+                                    nama_aksesoris.append(namaakse)
+                                    jumlah_aksesoris.append(jumlah)
+                                    Tharga_aksesoris.append(jumlah * harga)
+                                    break
+                                else:
+                                    print("harus berupa angka")
+                            elif pilihan == 2:
+                                namaakse = "Mid budget Earphone"
+                                harga = 25000
+                                jumlah = input("beli berapa banyak")
+                                if jumlah.isdigit():
+                                    jumlah = int(jumlah)
+                                    nama_aksesoris.append(namaakse)
+                                    jumlah_aksesoris.append(jumlah)
+                                    Tharga_aksesoris.append(jumlah * harga)
+                                    hargaakesoris += jumlah * harga
+                                    break
+                                else:
+                                    print("harus berupa angka")
+                            elif pilihan == 3:
+                                namaakse = "High budget Earphone"
+                                harga = 50000
+                                jumlah = input("beli berapa banyak")
+                                if jumlah.isdigit():
+                                    jumlah = int(jumlah)
+                                    nama_aksesoris.append(namaakse)
+                                    jumlah_aksesoris.append(jumlah)
+                                    Tharga_aksesoris.append(jumlah * harga)
+                                    hargaakesoris += jumlah * harga
+                                    break
+                                else:
+                                    print("harus berupa angka")
+                            elif pilihan == 4:
+                                break
                             else:
-                                print("harus berupa angka")
-                        elif opsiEar == 2:
-                            namaakse = "Mid budget Earphone"
-                            harga = 25000
-                            jumlah = input("beli berapa banyak")
-                            if jumlah.isdigit():
-                                jumlah = int(jumlah)
-                                nama_aksesoris.append(namaakse)
-                                jumlah_aksesoris.append(jumlah)
-                                Tharga_aksesoris.append(jumlah * harga)
-                                hargatotalear += jumlah * harga
-                            hargatotalear += jumlah * harga
-                        elif opsiEar == 3:
-                            namaakse = "High budget Earphone"
-                            harga = 50000
-                            jumlah = input("beli berapa banyak")
-                            if jumlah.isdigit():
-                                jumlah = int(jumlah)
-                                nama_aksesoris.append(namaakse)
-                                jumlah_aksesoris.append(jumlah)
-                                Tharga_aksesoris.append(jumlah * harga)
-                                hargatotalear += jumlah * harga
-                        elif opsiEar == 4:
-                            break
+                                print("tidak ada pilihan")
                         else:
-                            print("tidak ada pilihan")
+                            print("harus berupa angka")
                 elif pilihan == 3:
                     while True:
                         print("1.xiaomi")
                         print("2.realme")
                         print("3.iphone")
                         print("4.batal")
-                        opsicase = int(input("Pilih merek : "))
-                        if opsicase == 1:
+                        pilihan = input("Pilih merek : ")
+                        if pilihan == 1:
                             namaakse = "Casexiaomi"
                             harga = 5000
                             jumlah = input("berapa banyak yg dibeli : ")
@@ -238,7 +248,7 @@ while True:
                                 break
                             else:
                                 print("jumlah harus angka")
-                        elif opsicase == 2:
+                        elif pilihan == 2:
                             namaakse = "CaseRealme"
                             harga = 4500
                             jumlah = input("berapa banyak yg dibeli : ")
@@ -248,9 +258,10 @@ while True:
                                 jumlah_aksesoris.append(jumlah)
                                 Tharga_aksesoris.append(jumlah * harga)
                                 hargaakesoris += jumlah * harga
+                                break
                             else:
                                 print("jumlah harus berupa angka")
-                        elif opsicase == 3:
+                        elif pilihan == 3:
                             namaakse = "Case Iphone"
                             harga = 5500
                             jumlah = input("berapa banyak yg dibeli : ")
@@ -260,7 +271,10 @@ while True:
                                 jumlah_aksesoris.append(jumlah)
                                 Tharga_aksesoris.append(jumlah * harga)
                                 hargaakesoris += jumlah * harga
-                        elif opsicase == 4:
+                                break
+                            else:
+                                print("harus berupa angka")
+                        elif pilihan == 4:
                             break
                 elif pilihan == 4:
                     break
