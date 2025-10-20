@@ -301,7 +301,8 @@ while True:
             print("Zhamet cell")
             print("=" * 10)
             for p in range (len(list_hp)):
-                print("Pulsa", p+1, " No : ", list_hp[p], "nominal :", list_nominalhp[p])
+                print("Pulsa")
+                print( p+1, " No : ", list_hp[p], "nominal :", list_nominalhp[p])
             print("-" * 10)
             print("E-Wallet:")
             for e in range(len(listnowallet)):
@@ -320,4 +321,5 @@ while True:
             print("tidak ada pilihan")
     else:
         print("harus berupa angka")
+
 
