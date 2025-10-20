@@ -193,11 +193,11 @@ while True:
                             print("2.Mid budget - Rp 25.000")
                             print("3.High Budget - Rp 50.000")
                             print("4.Batal")
-                            pilihan = input("Pilih dari 1-4 :")
+                            pilihan = input("Pilih Earphone :")
                             if pilihan.isdigit():
                                 pilihan = int(pilihan)
                                 if pilihan == 1:
-                                    namaakse = "Low Budger Earphone"
+                                    namaakse = "Low Budget Earphone"
                                     harga = 10000
                                     jumlah = input("beli berapa banyak : ")
                                     if jumlah.isdigit():
