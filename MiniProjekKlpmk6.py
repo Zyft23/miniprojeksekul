@@ -83,7 +83,10 @@ while True:
                         while True:
                             print("===GoPay===")
                             gopay = input("masukkan Nomor Gopay : ")
-                            if gopay.isdigit() and len(gopay) == 12:
+                            print("ketik batal untuk membatalkan")
+                            if gopay == batal:
+                                break
+                            elif gopay.isdigit() and len(gopay) == 12:
                                 nominal = input("masukkan Nominal : ")
                                 if nominal.isdigit():
                                     nominal = int(nominal)
@@ -321,5 +324,6 @@ while True:
             print("tidak ada pilihan")
     else:
         print("harus berupa angka")
+
 
 
