@@ -19,15 +19,14 @@ while True:
     print("2.Isi E-Wallet")
     print("3.Aksesoris")
     print("4.Selesai")
-    pilihan = input("Pilih Dari angka 1-4 : ")
+    pilihan = input("Pilih layanan : ")
     if pilihan.isdigit():
         pilihan = int(pilihan)
         if pilihan == 1:
             while True:
                 print("===Pulsa===")
-                print("Masukkan nomor hp (12 Digit)")
                 print("ketik batal untuk membatalkan")
-                no_hp = input(" : ").lower()
+                no_hp = input("masukkan Nomor Pulsa (12 digit) : ").lower()
                 if no_hp == "batal":
                     break
                 elif no_hp.isdigit() and len(no_hp) ==12:
@@ -49,7 +48,7 @@ while True:
                 print("2.GoPay")
                 print("3.shopeePay")
                 print("4.batal")
-                pilihan = input("Pilih Dari 1-4 : ")
+                pilihan = input("Pilih E-Wallet: ")
                 if pilihan.isdigit():
                     pilihan = int(pilihan)
                     if pilihan == 1:
@@ -139,7 +138,7 @@ while True:
                 print("2.Earphone")
                 print("3.Casing Hp")
                 print("4.batal")
-                pilihan = input("Pilih Aksesoris Dari 1-4 : ")
+                pilihan = input("Pilih Aksesoris : ")
                 if pilihan.isdigit():
                     pilihan = int(pilihan)
                     if pilihan == 1:
@@ -147,7 +146,7 @@ while True:
                             print("1.Type C - Rp 10.000")
                             print("2.Micro Usb - Rp 7.500")
                             print("3.Batal")
-                            pilihan = input("Pilih Tipe Kabel 1-2 : ")
+                            pilihan = input("Pilih Tipe Kabel : ")
                             if pilihan.isdigit():
                                 pilihan = int(pilihan)
                                 if pilihan == 1:
