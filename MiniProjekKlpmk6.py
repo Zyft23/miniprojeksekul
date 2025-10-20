@@ -27,7 +27,7 @@ while True:
                 print("===Pulsa===")
                 print("Masukkan nomor hp (12 Digit) : ")
                 print("ketik batal untuk membatalkan : ")
-                no_hp = input(" : ").lower()
+                no_hp = input("masukkan Nomor pulsa (12 digit) : ").lower()
                 if no_hp == "batal":
                     break
                 elif no_hp.isdigit() and len(no_hp) ==12:
@@ -82,9 +82,9 @@ while True:
                         namawallet = "Gopay"
                         while True:
                             print("===GoPay===")
-                            gopay = input("masukkan Nomor Gopay (12 digit) : ")
+                            gopay = input("masukkan Nomor Gopay (12 digit) : ").lower()
                             print("ketik batal untuk membatalkan")
-                            if gopay == batal:
+                            if gopay == "batal":
                                 break
                             elif gopay.isdigit() and len(gopay) == 12:
                                 nominal = input("masukkan Nominal : ")
@@ -107,7 +107,7 @@ while True:
                         while True:
                             print("===ShopeePay===")
                             print("ketik batal untuk membatalkan")
-                            shopeepay = input("masukkan Nomor ShopeePay (12 digit) : ")
+                            shopeepay = input("masukkan Nomor ShopeePay (12 digit) : ").lower()
                             if shopeepay == "batal":
                                 break
                             elif shopeepay.isdigit() and len(shopeepay) == 12:
@@ -324,7 +324,3 @@ while True:
             print("tidak ada pilihan")
     else:
         print("harus berupa angka")
-
-
-
-
